@@ -1,0 +1,9 @@
+body {
+    background-color:#102030;
+    color:aliceblue;
+}
+
+.title {
+    text-align:center;
+    font-size:300%;
+}
