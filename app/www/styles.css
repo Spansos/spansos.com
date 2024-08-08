@@ -1,9 +1,37 @@
+/* default everything */
 body {
     background-color:#102030;
     color:aliceblue;
 }
 
+/* links */
+a:link {
+    color: red;
+    text-decoration: none;
+}
+a:visited {
+    color: pink;
+    text-decoration: none;
+}
+a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+.link_active, a:active {
+    color: black;
+    text-decoration: underline;
+}
+
+/* big name on top */
 .title {
     text-align:center;
-    font-size:300%;
+    font-size:250%;
+}
+
+/* centers the thing */
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
