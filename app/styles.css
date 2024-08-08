@@ -23,9 +23,11 @@ a:hover {
 }
 
 /* big name on top */
-.title {
-    text-align:center;
-    font-size:250%;
+header, footer, .bio {
+    text-align: center;
+    border-bottom-width: 1px;
+    border-bottom-color: aliceblue;
+    border-bottom-style: solid;
 }
 
 /* centers the thing */
