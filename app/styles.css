@@ -22,12 +22,19 @@ a:hover {
     text-decoration: underline;
 }
 
-/* big name on top */
-header, footer, .bio {
+header, footer, .content {
     text-align: center;
     border-bottom-width: 1px;
     border-bottom-color: aliceblue;
     border-bottom-style: solid;
+}
+
+.content {
+    padding-bottom: 25%;
+}
+
+.bio {
+    max-width: 500px;
 }
 
 /* centers the thing */
