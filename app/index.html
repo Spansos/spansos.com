@@ -32,14 +32,14 @@
         </div>
         <!-- net worth tracker -->
         <div style="position:absolute; right:0%; top:0%; background-color:#ebfbf6; font-family: Arial, Helvetica, sans-serif; font-size:250%; line-height: 48px;">
-            <span style="color:black; font-weight: 700;">Website Networth</span>
-            <span id="networth-value" style="color:#008555; border-left: 1px solid #bdc9c5; padding:1px 10px">$5.22</span>
+            <span style="color:black; font-weight: 700;">Website Net Worth</span>
+            <span id="net-worth-value" style="color:#008555; border-left: 1px solid #bdc9c5; padding:1px 10px">$5.22</span>
             <script>
                 function randomize_networth() {
                     var dollars = Math.pow(Math.random()*10, 10);
                     console.log(dollars);
                     var format = Intl.NumberFormat('en', {style:'currency', currency:'USD', notation:'compact'});
-                    document.getElementById('networth-value').innerHTML = format.format(dollars);
+                    document.getElementById('net-worth-value').innerHTML = format.format(dollars);
                 }
                 randomize_networth();
             </script>
