@@ -22,25 +22,28 @@ a:hover {
     text-decoration: underline;
 }
 
-header, footer, .content {
-    text-align: center;
-    border-bottom-width: 1px;
-    border-bottom-color: aliceblue;
-    border-bottom-style: solid;
-}
-
-.content {
-    padding-bottom: 25%;
-}
-
-.bio {
-    max-width: 500px;
-}
-
 /* centers the thing */
-.centered {
+.centered, header, footer, .content {
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+header, footer {
+    border-width: 1px;
+    border-color: aliceblue;
+}
+
+header {
+    border-bottom-style: solid;
+}
+
+footer {
+    border-top-style: solid;
+}
+
+.content {
+    padding-bottom: 25%;
+    max-width: 500px;
 }

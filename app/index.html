@@ -5,6 +5,43 @@
         <link rel="stylesheet", href="styles.css">
     </head>
     <body>
+        <!-- speedrun timer -->
+        <div id="timer" style="position: absolute; left:0%; top:0%; width: auto; height: auto; background-color:black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <span id="timer-time" style="background: linear-gradient(yellowgreen, green); background-clip: text; color:transparent; font-size: 300%;"></span>
+            <span id="timer-millitime" style="background: linear-gradient(yellowgreen, green); background-clip: text; color:transparent; font-size: 200%;"></span>
+            <script>
+                function timer_main() {
+                    var start = sessionStorage.getItem("timer-start");
+                    if (!start) {
+                        start = Date.now();
+                        sessionStorage.setItem("timer-start", start);
+                    }
+                    function update() {
+                        var time = Date.now()-start;
+                        document.getElementById("timer-time").innerHTML = Math.floor(time/(60*60*1000)) + ':';
+                        document.getElementById("timer-time").innerHTML += Math.floor(time/(60*1000)%60).toString().padStart(2, '0') + ':';
+                        document.getElementById("timer-time").innerHTML += Math.floor(time/(1000)%60).toString().padStart(2, '0');
+                        document.getElementById("timer-millitime").innerHTML = '.'+Math.floor(time/(10)%100).toString().padStart(2, '0');
+                    }
+                    setInterval(update, 1/60);
+                }
+                timer_main()
+            </script>
+        </div>
+        <!-- net worth tracker -->
+        <div style="position:absolute; right:0%; top:0%; background-color:#ebfbf6; font-family: Arial, Helvetica, sans-serif; font-size:250%; line-height: 48px;">
+            <span style="color:black; font-weight: 700;">Website Networth</span>
+            <span id="networth-value" style="color:#008555; border-left: 1px solid #bdc9c5; padding:1px 10px">$5.22</span>
+            <script>
+                function randomize_networth() {
+                    var dollars = Math.pow(Math.random()*10, 10);
+                    console.log(dollars);
+                    var format = Intl.NumberFormat('en', {style:'currency', currency:'USD', notation:'compact'});
+                    document.getElementById('networth-value').innerHTML = format.format(dollars);
+                }
+                randomize_networth();
+            </script>
+        </div>
         <!-- header : title and tabs -->
         <header>
             <h1>spansos spansos</h1>
@@ -16,14 +53,12 @@
         </header>
         <!-- bio -->
         <div class="content">
-            <div class="bio centered">
-                <p align="left">
-                    greeters, im spansos<sup>(not real name)(he/them)(anarcho/communist)</sup>, and this is my webbed site. i'll mostly talk here about about projects im working on or the occasional thought i may have.
-                </p>
-                <p align="left">
-                    im a third-year it student, although ive been programming for a couple years longer than that
-                </p>
-            </div>
+            <p align="left">
+                greeters, im spansos<sup>(not real name)(he/them)(anarcho/communist)</sup>, and this is my webbed site. i'll mostly talk here about about projects im working on or the occasional thought i may have.
+            </p>
+            <p align="left">
+                im a third-year it student, although ive been programming for a couple years longer than that
+            </p>
         </div>
         <!-- links -->
         <footer>
@@ -35,9 +70,5 @@
                 <a href="https://soepeter.wixsite.com/molenwebcams">windmill webcams</a>
             </p>
         </footer>
-        <!-- </div> -->
-        <!-- random things that i like -->
-
-        <!-- should check copyright before uncomment <img class="centered" src="sabotabbysnake.webp" alt="drawing of an aggrivated cat holding a dead snake in its mouth. the background is the anarcho-communist flag"> -->
     </body>
 </html>
