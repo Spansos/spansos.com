@@ -219,7 +219,7 @@
     for (let i = 0; i < 10; i++) {
       const heart = document.createElement('div');
       heart.className = 'heart';
-      heart.textContent = '❤';
+      heart.textContent = '\u2764';
       const offsetX = (Math.random() - 0.5) * 50;
       const offsetY = (Math.random() - 0.5) * 50;
       heart.style.left = `${centerX + offsetX - 16}px`;
